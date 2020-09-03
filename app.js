@@ -64,7 +64,9 @@ keyBoard.addEventListener( 'click', (e) => {
 
     // matches letter to keyboard button pressed
     const letterFound = checkLetter(letterBtn);
-    if ( letterFound.value = null ) {
-        missed += 1;
+    if ( !letterFound ) {
+        missed++;
+        const hearts = document.querySelectorAll('img')
+        hearts[missed - 1].style.opacity = '0.25';
     }
 });
