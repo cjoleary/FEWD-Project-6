@@ -1,12 +1,4 @@
 
-// Hide start screen overlay
-const startBtn = document.querySelector( '.btn__reset' );
-const overlay = document.getElementById( 'overlay' );
-startBtn.addEventListener( 'click', (e) => {
-    e.preventDefault();
-    overlay.style.display = 'none';
-});
-
 // Variables
 const keyBoard = document.querySelector( '#qwerty' );
 const phraseUL = document.querySelector( '#phrase' );
@@ -18,6 +10,14 @@ const phrases = [
     'EVERY DOG HAS HIS DAY', 
     'IT TAKES TWO TO TANGO'
 ];
+
+// Hide start screen overlay
+const startBtn = document.querySelector( '.btn__reset' );
+const overlay = document.getElementById( 'overlay' );
+startBtn.addEventListener( 'click', (e) => {
+    e.preventDefault();
+    overlay.style.display = 'none';
+});
 
 // Randomly chooses phrase from phrases array, returns a new array of characters from the randomly chosen phrase
 function getRandomPhraseAsArray ( arr ) {
@@ -33,7 +33,6 @@ function addPhraseToDisplay( arr ) {
     for ( let i = 0; i < arr.length; i++ ) {
         const listItem = document.createElement('li');
         listItem.textContent = arr[i];
-        console.log(listItem);
         if ( listItem.textContent !== ' ' ) {
             listItem.className = 'letter';
         }
@@ -42,3 +41,30 @@ function addPhraseToDisplay( arr ) {
 }
 
 addPhraseToDisplay(phraseArray);
+
+// checks to see if phrase letters match the keyboard btn the player clicks
+function checkLetter( button ) {
+    const letter = document.getElementsByClassName('letter')
+    let match = null;
+    for ( let i = 0; i < letter.length; i++ ) {
+        if ( button.textContent === letter[i].textContent.toLowerCase() ) {
+            letter[i].className += ' show';
+            match = letter[i].textContent;
+            console.log(match);
+        }
+    }
+    return match;
+}
+
+// keyboard event listener
+keyBoard.addEventListener( 'click', (e) => {
+    const letterBtn = event.target;
+    letterBtn.className += ' chosen';
+    letterBtn.disabled = true;
+
+    // matches letter to keyboard button pressed
+    const letterFound = checkLetter(letterBtn);
+    if ( letterFound.value = null ) {
+        missed += 1;
+    }
+});
