@@ -46,7 +46,7 @@ addPhraseToDisplay(phraseArray);
 
 // checks to see if phrase letters match the keyboard btn the player clicks
 function checkLetter( button ) {
-    const letter = document.getElementsByClassName('letter')
+    const letter = document.querySelectorAll( '.letter' )
     let match = null;
     for ( let i = 0; i < letter.length; i++ ) {
         if ( button.textContent === letter[i].textContent.toLowerCase() ) {
