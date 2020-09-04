@@ -2,6 +2,8 @@
 // Global Variables
 const keyBoard = document.querySelector( '#qwerty' );
 const phraseUL = document.querySelector( '#phrase' );
+const startBtn = document.querySelector( '.btn__reset' );
+const overlay = document.getElementById( 'overlay' );
 let missed = 0;
 const phrases = [
     'A BLESSING IN DISGUISE',
@@ -12,8 +14,6 @@ const phrases = [
 ];
 
 // Hide start screen overlay
-const startBtn = document.querySelector( '.btn__reset' );
-const overlay = document.getElementById( 'overlay' );
 startBtn.addEventListener( 'click', (e) => {
     e.preventDefault();
     overlay.style.display = 'none';
