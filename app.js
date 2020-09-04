@@ -54,20 +54,6 @@ function checkLetter( button ) {
             match = letter[i].textContent;
         }
     }
-
-    if ( button.tagName === 'BUTTON' && button.className !== 'chosen' ) {
-        button.className += ' chosen';
-        button.disabled = true;
-        // matches letter to keyboard button pressed
-        const letterFound = checkLetter( button );
-        // keeps track of tries remaining
-        if ( letterFound === null ) {
-            const hearts = document.querySelectorAll('.tries')
-            hearts[missed - 1].style.opacity = '0.25';
-            missed++;
-        }
-    }
-
     return match;
 }
 
@@ -92,7 +78,19 @@ function checkWin() {
 
 // keyboard event listener
 keyBoard.addEventListener( 'click', (e) => {
-    const button = event.target;
-    checkLetter( button );
+    const letterBtn = event.target;
+    if ( letterBtn.tagName === 'BUTTON' && letterBtn.className !== 'chosen' ) {
+        letterBtn.className += ' chosen';
+        letterBtn.disabled = true;
+    }
+
+    // matches letter to keyboard button pressed
+    const letterFound = checkLetter(letterBtn);
+    // keeps track of tries remaining
+    if ( !letterFound && letterBtn.tagName === 'BUTTON' ) {
+        missed++;
+        const hearts = document.querySelectorAll('.tries')
+        hearts[missed - 1].style.opacity = '0.25';
+    }
     checkWin();
 });
