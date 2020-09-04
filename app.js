@@ -4,6 +4,8 @@ const keyBoard = document.querySelector( '#qwerty' );
 const phraseUL = document.querySelector( '#phrase' );
 const startBtn = document.querySelector( '.btn__reset' );
 const overlay = document.getElementById( 'overlay' );
+const title = document.querySelector( '.title' );
+const scoreboard = document.querySelector('#scoreboard')
 let missed = 0;
 const phrases = [
     'A BLESSING IN DISGUISE',
@@ -61,8 +63,6 @@ function checkLetter( button ) {
 function checkWin() {
     const letter = document.querySelectorAll( '.letter' );
     const show = document.querySelectorAll( '.show' );
-    const title = document.querySelector( '.title' );
-    const scoreboard = document.querySelector('#scoreboard')
     if ( letter.length === show.length ) {
         overlay.className += ' win';
         overlay.style.display = 'flex';
