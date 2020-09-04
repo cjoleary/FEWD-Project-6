@@ -28,7 +28,7 @@ function getRandomPhraseAsArray ( arr ) {
 
 phraseArray = getRandomPhraseAsArray( phrases );
 
-// Loops through array of characters and appends them to the #phrase ul
+// Loops through array of characters and appends them to the #phrase ul as list items
 function addPhraseToDisplay( arr ) {
     for ( let i = 0; i < arr.length; i++ ) {
         const listItem = document.createElement('li');
@@ -56,6 +56,22 @@ function checkLetter( button ) {
     return match;
 }
 
+// checks to see if the game has been won
+function checkWin() {
+    const letter = document.querySelectorAll( '.letter' );
+    const show = document.querySelectorAll( '.show' );
+    const title = document.querySelector( '.title' );
+    if ( letter.length === show.length ) {
+        overlay.className += ' win';
+        overlay.style.display = 'flex';
+        title.textContent = "You've Won the Game!";
+    } else if ( missed >= 5 ) {
+        overlay.className += ' lose';
+        overlay.style.display = 'flex';
+        title.textContent = "You've Lost the Game :(";
+    }
+}
+
 // keyboard event listener
 keyBoard.addEventListener( 'click', (e) => {
     const letterBtn = event.target;
@@ -64,9 +80,11 @@ keyBoard.addEventListener( 'click', (e) => {
 
     // matches letter to keyboard button pressed
     const letterFound = checkLetter(letterBtn);
+    // keeps track of tries remaining
     if ( !letterFound ) {
         missed++;
         const hearts = document.querySelectorAll('img')
         hearts[missed - 1].style.opacity = '0.25';
     }
+    checkWin();
 });
