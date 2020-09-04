@@ -61,14 +61,17 @@ function checkWin() {
     const letter = document.querySelectorAll( '.letter' );
     const show = document.querySelectorAll( '.show' );
     const title = document.querySelector( '.title' );
+    const scoreboard = document.querySelector('#scoreboard')
     if ( letter.length === show.length ) {
         overlay.className += ' win';
         overlay.style.display = 'flex';
         title.textContent = "You've Won the Game!";
+        scoreboard.style.display = 'none';
     } else if ( missed >= 5 ) {
         overlay.className += ' lose';
         overlay.style.display = 'flex';
         title.textContent = "You've Lost the Game :(";
+        scoreboard.style.display = 'none';
     }
 }
 
@@ -83,7 +86,7 @@ keyBoard.addEventListener( 'click', (e) => {
     // keeps track of tries remaining
     if ( !letterFound ) {
         missed++;
-        const hearts = document.querySelectorAll('img')
+        const hearts = document.querySelectorAll('.tries')
         hearts[missed - 1].style.opacity = '0.25';
     }
     checkWin();
