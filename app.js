@@ -92,5 +92,6 @@ keyBoard.addEventListener( 'click', (e) => {
         const hearts = document.querySelectorAll('.tries')
         hearts[missed - 1].style.opacity = '0.25';
     }
+    
     checkWin();
 });
