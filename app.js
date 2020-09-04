@@ -52,7 +52,6 @@ function checkLetter( button ) {
         if ( button.textContent === letter[i].textContent.toLowerCase() ) {
             letter[i].className += ' show';
             match = letter[i].textContent;
-            console.log(match);
         }
     }
     return match;
