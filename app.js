@@ -35,6 +35,8 @@ function addPhraseToDisplay( arr ) {
         listItem.textContent = arr[i];
         if ( listItem.textContent !== ' ' ) {
             listItem.className = 'letter';
+        } else {
+            listItem.className = 'space';
         }
         phraseUL.appendChild(listItem);
     }
