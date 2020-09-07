@@ -178,6 +178,7 @@ button:hover {
 .start a {
   color: var(--color-start);
   font-weight: bold;
+  transition: var(--transition);
 }
 
 .win {
@@ -187,6 +188,7 @@ button:hover {
 .win a {
   color: var(--color-win);
   font-weight: bold;
+  transition: var(--transition);
 }
 
 .lose {
@@ -196,4 +198,5 @@ button:hover {
 .lose a {
   color: var(--color-lose);
   font-weight: bold;
+  transition: var(--transition);
 }
