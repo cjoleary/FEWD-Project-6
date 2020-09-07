@@ -63,7 +63,7 @@ function checkWin() {
     const show = document.querySelectorAll( '.show' );
     if ( letter.length === show.length ) {
         setTimeout( () => {
-                overlay.className += ' win';
+                overlay.className = ' win';
                 overlay.style.display = 'flex';
                 subTitle.textContent = "We have a winner!";
                 scoreboard.style.display = 'none';
@@ -71,7 +71,7 @@ function checkWin() {
             }, 750);
     } else if ( missed >= 5 ) {
         setTimeout( () => {
-            overlay.className += ' lose';
+            overlay.className = ' lose';
             overlay.style.display = 'flex';
             subTitle.textContent = 'Sorry, better luck next time!';
             scoreboard.style.display = 'none';
@@ -112,6 +112,7 @@ function resetGame() {
     resetHearts();
     resetPhrase();
     overlay.style.display = 'none';
+    overlay.className = ' start'
 }
 
 ///////////////////////////////////////////////
