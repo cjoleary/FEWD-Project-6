@@ -76,7 +76,7 @@ function checkWin() {
             subTitle.textContent = 'Sorry, better luck next time!';
             scoreboard.style.display = 'none';
             resetBtn.textContent = 'Try Again';
-        }, 250);
+        }, 500);
     }
 }
 
