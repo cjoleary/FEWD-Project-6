@@ -99,6 +99,7 @@ function resetKeyboard() {
     for ( let i = 0; i < chosen.length; i++ ) {
         chosen[i].className = '';
         chosen[i].disabled = false;
+        chosen[i].style.backgroundColor = '';
     }
 }
 
