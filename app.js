@@ -65,17 +65,21 @@ function checkWin() {
     const letter = document.querySelectorAll( '.letter' );
     const show = document.querySelectorAll( '.show' );
     if ( letter.length === show.length ) {
-        overlay.className += ' win';
-        overlay.style.display = 'flex';
-        subTitle.textContent = "We have a winner!";
-        scoreboard.style.display = 'none';
-        startBtn.textContent = 'Try Again';
+        setTimeout( () => {
+                overlay.className += ' win';
+                overlay.style.display = 'flex';
+                subTitle.textContent = "We have a winner!";
+                scoreboard.style.display = 'none';
+                startBtn.textContent = 'Try Again';
+            }, 750);
     } else if ( missed >= 5 ) {
-        overlay.className += ' lose';
-        overlay.style.display = 'flex';
-        subTitle.textContent = `Sorry, the correct answer was "${phraseArray.join('')}"`;
-        scoreboard.style.display = 'none';
-        startBtn.textContent = 'Try Again';
+        setTimeout( () => {
+            overlay.className += ' lose';
+            overlay.style.display = 'flex';
+            subTitle.textContent = `Sorry, the correct answer was "${phraseArray.join('')}"`;
+            scoreboard.style.display = 'none';
+            startBtn.textContent = 'Try Again';
+        }, 750);
     }
 }
 
