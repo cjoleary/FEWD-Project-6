@@ -1,5 +1,7 @@
 
-// Global Variables
+////////////////////////////////////
+// ------ Global Variables ------ //
+////////////////////////////////////
 const keyBoard = document.querySelector( '#qwerty' );
 const phraseUL = document.querySelector( '#phrase' ).firstElementChild;
 const startBtn = document.querySelector( '.btn__reset' );
@@ -15,6 +17,10 @@ const phrases = [
     'EVERY DOG HAS HIS DAY', 
     'IT TAKES TWO TO TANGO'
 ];
+
+////////////////////////////////////
+// ------ Global Functions ------ //
+////////////////////////////////////
 
 // Randomly chooses phrase from phrases array, returns a new array of characters from the randomly chosen phrase
 function getRandomPhraseAsArray ( arr ) {
@@ -73,26 +79,6 @@ function checkWin() {
     }
 }
 
-// listen for the on screen keyboard to be clicked
-keyBoard.addEventListener( 'click', (e) => {
-    const letterBtn = event.target;
-    if ( letterBtn.tagName === 'BUTTON' && letterBtn.className !== 'chosen' ) {
-        letterBtn.className += ' chosen';
-        letterBtn.disabled = true;
-    }
-
-    // matches letter to keyboard button pressed
-    const letterFound = checkLetter(letterBtn);
-
-    // keeps track of tries remaining
-    if ( !letterFound && letterBtn.tagName === 'BUTTON' ) {
-        missed++;
-        hearts[missed - 1].style.opacity = '0.25';
-    }
-    
-    checkWin();
-});
-
 // resets hearts
 function resetHearts() {
     missed = 0;
@@ -125,9 +111,33 @@ function resetGame() {
     overlay.style.display = 'none';
 }
 
-// Listen for the start / reset game button to be pressed
+///////////////////////////////////////////////
+// ----- Keyboard & Button Listeners ----- //
+///////////////////////////////////////////////
+
+// listen for the start / reset game button to be pressed
 startBtn.addEventListener( 'click', (e) => {
     e.preventDefault();
     overlay.style.display = 'none';
     resetGame();
+});
+
+// listen for the on screen keyboard to be clicked
+keyBoard.addEventListener( 'click', (e) => {
+    const letterBtn = event.target;
+    if ( letterBtn.tagName === 'BUTTON' && letterBtn.className !== 'chosen' ) {
+        letterBtn.className += ' chosen';
+        letterBtn.disabled = true;
+    }
+
+    // matches letter to keyboard button pressed
+    const letterFound = checkLetter(letterBtn);
+
+    // keeps track of tries remaining
+    if ( !letterFound && letterBtn.tagName === 'BUTTON' ) {
+        missed++;
+        hearts[missed - 1].style.opacity = '0.25';
+    }
+    
+    checkWin();
 });
