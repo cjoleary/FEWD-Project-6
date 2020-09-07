@@ -128,7 +128,7 @@ button {
 }
 
 .chosen {
-  background: var(--color-neutral);
+  background: var(--color-keys);
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
@@ -173,6 +173,7 @@ button {
 
 .start a {
   color: var(--color-start);
+  font-weight: bold;
 }
 
 .win {
@@ -181,6 +182,7 @@ button {
 
 .win a {
   color: var(--color-win);
+  font-weight: bold;
 }
 
 .lose {
@@ -189,4 +191,5 @@ button {
 
 .lose a {
   color: var(--color-lose);
+  font-weight: bold;
 }
