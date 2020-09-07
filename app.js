@@ -4,7 +4,7 @@
 ////////////////////////////////////
 const keyBoard = document.querySelector( '#qwerty' );
 const phraseUL = document.querySelector( '#phrase' ).firstElementChild;
-const startBtn = document.querySelector( '.btn__reset' );
+const resetBtn = document.querySelector( '.btn__reset' );
 const overlay = document.getElementById( 'overlay' );
 const subTitle = document.querySelector( '.subTitle' );
 const scoreboard = document.querySelector('#scoreboard')
@@ -45,8 +45,6 @@ function addPhraseToDisplay( arr ) {
         }
     }
 }
-
-addPhraseToDisplay(phraseArray);
 
 // checks to see if phrase letters match the keyboard btn clicked
 function checkLetter( button ) {
@@ -122,7 +120,7 @@ function resetGame() {
 ///////////////////////////////////////////////
 
 // listen for the start / reset game button to be pressed
-startBtn.addEventListener( 'click', (e) => {
+resetBtn.addEventListener( 'click', (e) => {
     e.preventDefault();
     setTimeout( () => {
         resetGame();  
