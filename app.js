@@ -15,7 +15,7 @@ const phrases = [
     'IT TAKES TWO TO TANGO'
 ];
 
-// Hide start screen overlay
+// Listen for the start game button to be pressed
 startBtn.addEventListener( 'click', (e) => {
     e.preventDefault();
     overlay.style.display = 'none';
@@ -46,7 +46,7 @@ function addPhraseToDisplay( arr ) {
 
 addPhraseToDisplay(phraseArray);
 
-// checks to see if phrase letters match the keyboard btn the player clicks
+// checks to see if phrase letters match the keyboard btn clicked
 function checkLetter( button ) {
     const letter = document.querySelectorAll( '.letter' )
     let match = null;
@@ -76,7 +76,7 @@ function checkWin() {
     }
 }
 
-// keyboard event listener
+// listen for the on screen keyboard to be clicked
 keyBoard.addEventListener( 'click', (e) => {
     const letterBtn = event.target;
     if ( letterBtn.tagName === 'BUTTON' && letterBtn.className !== 'chosen' ) {
@@ -86,6 +86,7 @@ keyBoard.addEventListener( 'click', (e) => {
 
     // matches letter to keyboard button pressed
     const letterFound = checkLetter(letterBtn);
+
     // keeps track of tries remaining
     if ( !letterFound && letterBtn.tagName === 'BUTTON' ) {
         missed++;
