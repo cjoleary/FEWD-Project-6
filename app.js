@@ -122,8 +122,9 @@ function resetGame() {
 // listen for the start / reset game button to be pressed
 startBtn.addEventListener( 'click', (e) => {
     e.preventDefault();
-    overlay.style.display = 'none';
-    resetGame();
+    setTimeout( () => {
+        resetGame();  
+    }, 500)
 });
 
 // listen for the on screen keyboard to be clicked
