@@ -67,7 +67,7 @@ function checkWin() {
     } else if ( missed >= 5 ) {
         overlay.className += ' lose';
         overlay.style.display = 'flex';
-        subTitle.textContent = `Sorry, the correct answer was ${phraseArray.join('')}`;
+        subTitle.textContent = `Sorry, the correct answer was "${phraseArray.join('')}"`;
         scoreboard.style.display = 'none';
         startBtn.textContent = 'Try Again';
     }
