@@ -30,7 +30,7 @@ function getRandomPhraseAsArray ( arr ) {
     return phraseArray;
 }
 
-phraseArray = getRandomPhraseAsArray( phrases );
+const phraseArray = getRandomPhraseAsArray( phrases );
 
 // Loops through array of characters and appends them to the #phrase ul as list items
 function addPhraseToDisplay( arr ) {
@@ -104,6 +104,7 @@ function resetKeyboard() {
 // resets random phrase
 function resetPhrase() {
     phraseUL.innerHTML = '';
+    // adds the letters of the phrase to the display
     addPhraseToDisplay( getRandomPhraseAsArray( phrases ) )
 }
 
@@ -124,7 +125,7 @@ resetBtn.addEventListener( 'click', (e) => {
     e.preventDefault();
     setTimeout( () => {
         resetGame();  
-    }, 500)
+    }, 250)
 });
 
 // listen for the on screen keyboard to be clicked
