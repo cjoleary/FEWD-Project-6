@@ -11,11 +11,12 @@ const scoreboard = document.querySelector('#scoreboard')
 const hearts = document.querySelectorAll('.tries')
 let missed = 0;
 const phrases = [
-    'A BLESSING IN DISGUISE',
-    'A DIME A DOZEN',
-    'ONCE IN A BLUE MOON', 
-    'EVERY DOG HAS HIS DAY', 
-    'IT TAKES TWO TO TANGO'
+    "A BLESSING IN DISGUISE",
+    "A DIME A DOZEN",
+    "ONCE IN A BLUE MOON", 
+    "EVERY DOG HAS ITS DAY", 
+    "IT TAKES TWO TO TANGO",
+    "BETTER LATE THAN NEVER"
 ];
 
 ////////////////////////////////////
@@ -142,6 +143,7 @@ keyBoard.addEventListener( 'click', (e) => {
     if ( !letterFound && letterBtn.tagName === 'BUTTON' ) {
         missed++;
         hearts[missed - 1].style.opacity = '0.25';
+        letterBtn.style.backgroundColor = '#D98F45';
     }
     
     checkWin();
