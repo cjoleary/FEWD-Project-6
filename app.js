@@ -30,8 +30,6 @@ function getRandomPhraseAsArray ( arr ) {
     return phraseArray;
 }
 
-const phraseArray = getRandomPhraseAsArray( phrases );
-
 // Loops through array of characters and appends them to the #phrase ul as list items
 function addPhraseToDisplay( arr ) {
     for ( let i = 0; i < arr.length; i++ ) {
@@ -75,7 +73,7 @@ function checkWin() {
         setTimeout( () => {
             overlay.className += ' lose';
             overlay.style.display = 'flex';
-            subTitle.textContent = `Sorry, the correct answer was "${phraseArray.join('')}"`;
+            subTitle.textContent = 'Sorry, better luck next time!';
             scoreboard.style.display = 'none';
             resetBtn.textContent = 'Try Again';
         }, 750);
