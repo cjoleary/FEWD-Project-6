@@ -69,7 +69,7 @@ function checkWin() {
                 overlay.style.display = 'flex';
                 subTitle.textContent = "We have a winner!";
                 scoreboard.style.display = 'none';
-                startBtn.textContent = 'Try Again';
+                resetBtn.textContent = 'Try Again';
             }, 750);
     } else if ( missed >= 5 ) {
         setTimeout( () => {
@@ -77,7 +77,7 @@ function checkWin() {
             overlay.style.display = 'flex';
             subTitle.textContent = `Sorry, the correct answer was "${phraseArray.join('')}"`;
             scoreboard.style.display = 'none';
-            startBtn.textContent = 'Try Again';
+            resetBtn.textContent = 'Try Again';
         }, 750);
     }
 }
