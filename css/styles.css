@@ -104,7 +104,7 @@ button {
 .show {
   color: #000;
   background-color: #76CE82;
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  animation: shake 0.75s cubic-bezier(.36,.07,.19,.97) both;
 }
 
 @keyframes shake {
