@@ -16,7 +16,11 @@ const phrases = [
     "ONCE IN A BLUE MOON", 
     "EVERY DOG HAS ITS DAY", 
     "IT TAKES TWO TO TANGO",
-    "BETTER LATE THAN NEVER"
+    "BETTER LATE THAN NEVER",
+    "BEAT AROUND THE BUSH",
+    "THE ELEPHANT IN THE ROOM",
+    "EARLY BIRD GETS THE WORM",
+    "WHEN IT RAINS IT POURS"
 ];
 
 ////////////////////////////////////
