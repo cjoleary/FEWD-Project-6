@@ -40,6 +40,7 @@ function addPhraseToDisplay( arr ) {
         const listItem = document.createElement('li');
         listItem.textContent = arr[i];
         phraseUL.append(listItem);
+        // if the list item has text content it is given the class 'letter', if not it is given the class 'space'
         if ( listItem.textContent !== ' ' ) {
             listItem.className = 'letter';
         } else {
