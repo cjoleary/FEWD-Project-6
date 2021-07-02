@@ -7,8 +7,8 @@ const phraseUL = document.querySelector( '#phrase' ).firstElementChild;
 const resetBtn = document.querySelector( '.btn__reset' );
 const overlay = document.getElementById( 'overlay' );
 const subTitle = document.querySelector( '.subTitle' );
-const scoreboard = document.querySelector('#scoreboard')
-const hearts = document.querySelectorAll('.tries')
+const scoreboard = document.querySelector('#scoreboard');
+const hearts = document.querySelectorAll('.tries');
 let missed = 0;
 const phrases = [
     "A BLESSING IN DISGUISE",
