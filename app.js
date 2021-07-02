@@ -116,7 +116,7 @@ function resetGame() {
     resetHearts();
     resetPhrase();
     overlay.style.display = 'none';
-    overlay.className = 'start'
+    overlay.className = 'start';
 }
 
 /////////////////////////////////////////////
@@ -128,7 +128,7 @@ resetBtn.addEventListener( 'click', (e) => {
     e.preventDefault();
     setTimeout( () => {
         resetGame();  
-    }, 250)
+    }, 250);
 });
 
 // listen for the on screen keyboard to be clicked
